@@ -1,0 +1,555 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Store | Place Order</title>
+
+    <link rel="stylesheet" href="css/style.css">
+   
+
+    <script src="js/order.js" defer></script>
+</head>
+
+<body class="order-page">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header class="order-header">
+
+        <div class="logo">
+            <h2>MY store</h2>
+        </div>
+
+        <a href="shop.html" class="order-back-link">
+            <span class="back-arrow">←</span>
+            Back to Shop
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN ORDER AREA
+    ========================================== -->
+    <main class="order-main">
+
+        <!-- Decorative Background Elements -->
+        <div class="order-bg-circle circle-one"></div>
+        <div class="order-bg-circle circle-two"></div>
+
+
+        <!-- =====================================
+             PAGE INTRO
+        ====================================== -->
+        <section class="order-intro">
+
+            <span class="order-eyebrow">
+                CHECKOUT
+            </span>
+
+            <h1>
+                Place Your <span>Order</span>
+            </h1>
+
+            <p>
+                Complete your information below and we'll get your order
+                ready for delivery.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             CHECKOUT CONTAINER
+        ====================================== -->
+        <section class="checkout-container">
+
+
+            <!-- =================================
+                 LEFT SIDE
+            ================================== -->
+            <div class="checkout-left">
+
+
+                <!-- PRODUCT CARD -->
+                <div class="checkout-card product-card-section">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            🛍
+                        </div>
+
+                        <div>
+                            <span class="small-heading">
+                                YOUR SELECTION
+                            </span>
+
+                            <h2>
+                                Order Details
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMPORTANT:
+                         JavaScript inserts the product here.
+                    -->
+                    <div id="order-product"></div>
+
+                </div>
+
+
+
+                <!-- CUSTOMER INFORMATION -->
+                <div class="checkout-card customer-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            👤
+                        </div>
+
+                        <div>
+                            <span class="small-heading">
+                                DELIVERY
+                            </span>
+
+                            <h2>
+                                Customer Information
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <form id="order-form">
+
+
+                        <!-- FULL NAME -->
+                        <div class="form-group">
+
+                            <label for="customer-name">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    👤
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="customer-name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+                        <div class="form-group">
+
+                            <label for="customer-phone">
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    📱
+                                </span>
+
+                                <input
+                                    type="tel"
+                                    id="customer-phone"
+                                    placeholder="Enter your phone number"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="Customer-email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ✉
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="Customer-email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+                        <div class="form-group">
+
+                            <label for="customer-address">
+                                Delivery Address
+                            </label>
+
+                            <div class="input-wrapper textarea-wrapper">
+
+                                <span class="input-icon textarea-icon">
+                                    📍
+                                </span>
+
+                                <textarea
+                                    id="customer-address"
+                                    placeholder="Enter your complete delivery address"
+                                    rows="4"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CITY + PAYMENT -->
+                        <div class="form-row">
+
+
+                            <!-- CITY -->
+                            <div class="form-group">
+
+                                <label for="customer-city">
+                                    City
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="input-icon">
+                                        🏙
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="customer-city"
+                                        placeholder="Enter your city"
+                                        autocomplete="address-level2"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PAYMENT -->
+                            <div class="form-group">
+
+                                <label for="payment-method">
+                                    Payment Method
+                                </label>
+
+                                <div class="input-wrapper select-wrapper">
+
+                                    <span class="input-icon">
+                                        💳
+                                    </span>
+
+                                    <select id="payment-method">
+
+                                        <option value="cod">
+                                            Cash on Delivery
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SUBMIT BUTTON -->
+                        <button
+                            type="submit"
+                            id="place-order-btn"
+                            class="place-order-button"
+                        >
+
+                            <span class="button-text">
+                                Place Order
+                            </span>
+
+                            <span class="button-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- SECURITY NOTE -->
+                        <div class="secure-note">
+
+                            <span class="secure-icon">
+                                🔒
+                            </span>
+
+                            <span>
+                                Your information is safe and secure with us.
+                            </span>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RIGHT SIDE
+            ================================== -->
+            <aside class="order-summary">
+
+
+                <!-- SUMMARY CARD -->
+                <div class="summary-card">
+
+                    <div class="summary-top">
+
+                        <span class="small-heading">
+                            ORDER SUMMARY
+                        </span>
+
+                        <div class="summary-icon">
+                            🛒
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-message">
+
+                        <div class="summary-check">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>
+                                Almost there!
+                            </h3>
+
+                            <p>
+                                Review your product and complete the
+                                delivery information.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-features">
+
+                        <div class="summary-feature">
+
+                            <span class="feature-icon">
+                                🚚
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Fast Delivery
+                                </strong>
+
+                                <small>
+                                    Delivered to your doorstep
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-feature">
+
+                            <span class="feature-icon">
+                                🔒
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Secure Checkout
+                                </strong>
+
+                                <small>
+                                    Your information is protected
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-feature">
+
+                            <span class="feature-icon">
+                                💰
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <small>
+                                    Pay when your order arrives
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-bottom">
+
+                        <span>
+                            Need help?
+                        </span>
+
+                        <a href="shop.html">
+                            Continue Shopping →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHECKOUT STEPS -->
+                <div class="steps-card">
+
+                    <span class="small-heading">
+                        CHECKOUT PROCESS
+                    </span>
+
+                    <div class="checkout-steps">
+
+                        <div class="checkout-step active">
+
+                            <div class="step-number">
+                                1
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Order Details
+                                </strong>
+
+                                <small>
+                                    Review your product
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="step-line"></div>
+
+
+                        <div class="checkout-step active">
+
+                            <div class="step-number">
+                                2
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Your Information
+                                </strong>
+
+                                <small>
+                                    Add delivery details
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="step-line"></div>
+
+
+                        <div class="checkout-step">
+
+                            <div class="step-number">
+                                3
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Confirmation
+                                </strong>
+
+                                <small>
+                                    Place your order
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="order-footer">
+
+        <p>
+            © 2026 <strong>MY store</strong>. All rights reserved.
+        </p>
+
+        <a href="shop.html">
+            Continue Shopping
+        </a>
+
+    </footer>
+
+</body>
+</html>
+```
